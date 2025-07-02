@@ -1,0 +1,1626 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Shireesha Theegulla - QA Automation Engineer Portfolio with 4+ Years of Experience">
+    <meta name="author" content="Shireesha Theegulla">
+    <title>Shireesha Theegulla - QA Automation Engineer</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;700&family=Inter:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --primary-bg: #0a0a0a;
+            --secondary-bg: #1a1a1a;
+            --card-bg: #2a2a2a;
+            --accent-color: #00ff88;
+            --accent-secondary: #00d4ff;
+            --text-primary: #ffffff;
+            --text-secondary: #b0b0b0;
+            --text-muted: #666666;
+            --border-color: #333333;
+            --gradient-1: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            --gradient-2: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            --gradient-3: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            --gradient-4: linear-gradient(135deg, #43b02a, #6cbf00);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--primary-bg);
+            color: var(--text-primary);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .code-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--primary-bg);
+            z-index: -2;
+        }
+
+        .matrix-rain {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+            opacity: 0.1;
+        }
+
+        .matrix-column {
+            position: absolute;
+            top: -100%;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 14px;
+            color: var(--accent-color);
+            animation: matrix-fall linear infinite;
+        }
+
+        @keyframes matrix-fall {
+            to {
+                transform: translateY(calc(100vh + 100px));
+            }
+        }
+
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(10, 10, 10, 0.95);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border-color);
+            z-index: 1000;
+            padding: 1rem 0;
+            transition: all 0.3s ease;
+        }
+
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+        }
+
+        .logo {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--accent-color);
+            text-decoration: none;
+            position: relative;
+        }
+
+        .logo::before {
+            content: '<';
+            color: var(--accent-secondary);
+        }
+
+        .logo::after {
+            content: '/>';
+            color: var(--accent-secondary);
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            position: relative;
+            padding: 0.5rem 1rem;
+        }
+
+        .nav-links a:hover,
+        .nav-links a:focus {
+            color: var(--accent-color);
+            outline: none;
+        }
+
+        .nav-links a::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            width: 0;
+            height: 2px;
+            background: var(--accent-color);
+            transition: all 0.3s ease;
+            transform: translateX(-50%);
+        }
+
+        .nav-links a:hover::before,
+        .nav-links a:focus::before {
+            width: 100%;
+        }
+
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            background: radial-gradient(ellipse at center, rgba(0, 255, 136, 0.1) 0%, transparent 70%);
+        }
+
+        .hero-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .hero-content h1 {
+            font-size: 4rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, var(--accent-color), var(--accent-secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-content .subtitle {
+            font-size: 1.5rem;
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        .typing-text {
+            overflow: hidden;
+            border-right: 3px solid var(--accent-color);
+            white-space: nowrap;
+            animation: typing 3s steps(40, end), blink-caret 0.75s step-end infinite;
+        }
+
+        @keyframes typing {
+            from {
+                width: 0;
+            }
+
+            to {
+                width: 100%;
+            }
+        }
+
+        @keyframes blink-caret {
+
+            from,
+            to {
+                border-color: transparent;
+            }
+
+            50% {
+                border-color: var(--accent-color);
+            }
+        }
+
+        .hero-stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .stat-item {
+            text-align: center;
+            padding: 1rem;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+            border: 1px solid var(--border-color);
+        }
+
+        .stat-number {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--accent-color);
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+
+        .hero-code {
+            background: var(--secondary-bg);
+            border-radius: 15px;
+            padding: 2rem;
+            border: 1px solid var(--border-color);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .code-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .code-dots {
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+        }
+
+        .dot.red {
+            background: #ff5f56;
+        }
+
+        .dot.yellow {
+            background: #ffbd2e;
+        }
+
+        .dot.green {
+            background: #27ca3f;
+        }
+
+        .code-content {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.9rem;
+            line-height: 1.8;
+        }
+
+        .code-line {
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .keyword {
+            color: #ff79c6;
+        }
+
+        .string {
+            color: #f1fa8c;
+        }
+
+        .comment {
+            color: #6272a4;
+        }
+
+        .function {
+            color: #50fa7b;
+        }
+
+        .variable {
+            color: #8be9fd;
+        }
+
+        .section {
+            padding: 6rem 0;
+            position: relative;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, var(--accent-color), var(--accent-secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+            margin-bottom: 4rem;
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        .skills-container {
+            display: grid;
+            gap: 4rem;
+        }
+
+        .skill-category {
+            background: var(--secondary-bg);
+            border-radius: 20px;
+            padding: 3rem;
+            border: 1px solid var(--border-color);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .skill-category::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: var(--gradient-1);
+        }
+
+        .category-title {
+            font-size: 2rem;
+            font-weight: 600;
+            margin-bottom: 2rem;
+            color: var(--accent-color);
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .category-icon {
+            font-size: 2.5rem;
+            background: var(--gradient-1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .skill-card {
+            background: var(--card-bg);
+            border-radius: 15px;
+            padding: 2rem;
+            border: 1px solid var(--border-color);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+        }
+
+        .skill-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(0, 255, 136, 0.1) 0%, transparent 70%);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .skill-card:hover::before,
+        .skill-card:focus-within::before {
+            opacity: 1;
+        }
+
+        .skill-card:hover,
+        .skill-card:focus-within {
+            transform: translateY(-10px) scale(1.02);
+            border-color: var(--accent-color);
+            box-shadow: 0 20px 40px rgba(0, 255, 136, 0.2);
+        }
+
+        .skill-icon {
+            width: 60px;
+            height: 60px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+            font-size: 2rem;
+            background: var(--gradient-1);
+            color: white;
+            transition: all 0.3s ease;
+        }
+
+        .skill-card:hover .skill-icon,
+        .skill-card:focus-within .skill-icon {
+            transform: scale(1.1) rotate(10deg);
+        }
+
+        .skill-name {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--text-primary);
+        }
+
+        .skill-description {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .skill-level {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .skill-bar {
+            flex: 1;
+            height: 6px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 3px;
+            overflow: hidden;
+        }
+
+        .skill-progress {
+            height: 100%;
+            background: linear-gradient(90deg, var(--accent-color), var(--accent-secondary));
+            border-radius: 3px;
+            transition: width 1s ease;
+            position: relative;
+        }
+
+        .skill-progress::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            animation: shimmer 2s ease-in-out infinite;
+        }
+
+        @keyframes shimmer {
+            0% {
+                transform: translateX(-100%);
+            }
+
+            100% {
+                transform: translateX(100%);
+            }
+        }
+
+        .skill-percentage {
+            font-family: 'JetBrains Mono', monospace;
+            font-weight: 600;
+            color: var(--accent-color);
+        }
+
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: start;
+        }
+
+        .contact-info {
+            background: var(--secondary-bg);
+            border-radius: 20px;
+            padding: 3rem;
+            border: 1px solid var(--border-color);
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            padding: 1rem;
+            background: var(--card-bg);
+            border-radius: 10px;
+            transition: all 0.3s ease;
+        }
+
+        .contact-item:hover,
+        .contact-item:focus-within {
+            transform: translateX(10px);
+            border-left: 4px solid var(--accent-color);
+        }
+
+        .contact-icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 10px;
+            background: var(--gradient-1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.2rem;
+        }
+
+        .contact-form {
+            background: var(--secondary-bg);
+            border-radius: 20px;
+            padding: 3rem;
+            border: 1px solid var(--border-color);
+        }
+
+        .form-group {
+            margin-bottom: 2rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--text-secondary);
+            font-weight: 500;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 1rem;
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+            color: var(--text-primary);
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--accent-color);
+            box-shadow: 0 0 0 3px rgba(0, 255, 136, 0.1);
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 1rem 2rem;
+            background: linear-gradient(135deg, var(--accent-color), var(--accent-secondary));
+            color: var(--primary-bg);
+            border: none;
+            border-radius: 10px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+
+        .submit-btn:hover,
+        .submit-btn:focus {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(0, 255, 136, 0.3);
+            outline: none;
+        }
+
+        .submit-btn.loading {
+            cursor: not-allowed;
+            opacity: 0.7;
+        }
+
+        .submit-btn.loading .btn-text {
+            visibility: hidden;
+        }
+
+        .submit-btn .loader {
+            display: none;
+        }
+
+        .submit-btn.loading .loader {
+            display: inline-block;
+        }
+
+        .visitor-counter {
+            text-align: center;
+            margin-top: 2rem;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 1.2rem;
+            color: var(--accent-color);
+            background: var(--card-bg);
+            padding: 1rem;
+            border-radius: 10px;
+            border: 1px solid var(--border-color);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+
+        .visitor-counter.loading .counter-text {
+            visibility: hidden;
+        }
+
+        .loader {
+            width: 20px;
+            height: 20px;
+            border: 3px solid var(--accent-color);
+            border-top: 3px solid var(--accent-secondary);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        footer {
+            background: var(--secondary-bg);
+            border-top: 1px solid var(--border-color);
+            padding: 3rem 0;
+            text-align: center;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .social-link {
+            width: 60px;
+            height: 60px;
+            border-radius: 12px;
+            background: var(--card-bg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 1.5rem;
+            transition: all 0.3s ease;
+            border: 1px solid var(--border-color);
+        }
+
+        .social-link:hover,
+        .social-link:focus {
+            background: var(--accent-color);
+            color: var(--primary-bg);
+            transform: translateY(-5px);
+            outline: none;
+        }
+
+        @media (max-width: 1024px) {
+            .hero-container {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .hero-stats {
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            .contact-container {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero-stats {
+                grid-template-columns: 1fr;
+            }
+
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+        }
+
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+
+        .fade-in.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .slide-in-left {
+            opacity: 0;
+            transform: translateX(-50px);
+            transition: all 0.6s ease;
+        }
+
+        .slide-in-left.active {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .slide-in-right {
+            opacity: 0;
+            transform: translateX(50px);
+            transition: all 0.6s ease;
+        }
+
+        .slide-in-right.active {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            border: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="code-bg"></div>
+    <div class="matrix-rain" id="matrix-rain"></div>
+
+    <nav>
+        <div class="nav-container">
+            <a href="#home" class="logo" aria-label="Shireesha Theegulla Home">Shireesha</a>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section id="home" class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1>Shireesha Theegulla</h1>
+                <p class="subtitle typing-text">QA Automation Engineer with 4+ Years Experience</p>
+
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <div class="stat-number">4+</div>
+                        <div class="stat-label">Years Experience</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">30+</div>
+                        <div class="stat-label">Automation Tools</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">100+</div>
+                        <div class="stat-label">Test Cases Automated</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="hero-code">
+                <div class="code-header">
+                    <div class="code-dots">
+                        <div class="dot red" aria-hidden="true"></div>
+                        <div class="dot yellow" aria-hidden="true"></div>
+                        <div class="dot green" aria-hidden="true"></div>
+                    </div>
+                </div>
+                <div class="code-content">
+                    <span class="code-line"><span class="keyword">class</span> <span
+                            class="function">QAAutomationEngineer</span>:</span>
+                    <span class="code-line"> <span class="keyword">def</span> <span
+                            class="function">__init__</span>(<span class="variable">self</span>):</span>
+                    <span class="code-line"> <span class="variable">self</span>.name = <span class="string">"Shireesha
+                            Theegulla"</span></span>
+                    <span class="code-line"> <span class="variable">self</span>.experience = <span class="string">"4+
+                            years"</span></span>
+                    <span class="code-line"> <span class="variable">self</span>.skills = [</span>
+                    <span class="code-line"> <span class="string">"Selenium"</span>,</span>
+                    <span class="code-line"> <span class="string">"Appium"</span>,</span>
+                    <span class="code-line"> <span class="string">"Playwright"</span>,</span>
+                    <span class="code-line"> <span class="string">"Pytest"</span></span>
+                    <span class="code-line"> ]</span>
+                    <span class="code-line"> </span>
+                    <span class="code-line"> <span class="keyword">def</span> <span
+                            class="function">ensureQuality</span>(<span class="variable">self</span>):</span>
+                    <span class="code-line"> <span class="keyword">return</span> <span class="string">"Robust Automated
+                            Testing"</span></span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills" class="section">
+        <div class="container">
+            <h2 class="section-title fade-in">QA Automation Skillset</h2>
+            <p class="section-subtitle fade-in">Comprehensive expertise in test automation and quality assurance</p>
+
+            <div class="skills-container">
+                <div class="skill-category fade-in">
+                    <h3 class="category-title">
+                        <i class="fas fa-code category-icon" aria-hidden="true"></i>
+                        Programming & Scripting
+                    </h3>
+                    <div class="skills-grid">
+                        <div class="skill-card">
+                            <div class="skill-icon" style="background: linear-gradient(135deg, #3776ab, #ffd343);">
+                                <i class="fab fa-python" aria-hidden="true"></i>
+                            </div>
+                            <h4 class="skill-name">Python</h4>
+                            <p class="skill-description">Building robust test automation frameworks with Pytest</p>
+                            <div class="skill-level">
+                                <div class="skill-bar">
+                                    <div class="skill-progress" style="width: 90%;"></div>
+                                </div>
+                                <span class="skill-percentage">90%</span>
+                            </div>
+                        </div>
+                        <div class="skill-card">
+                            <div class="skill-icon" style="background: linear-gradient(135deg, #f7df1e, #f0db4f);">
+                                <i class="fab fa-js-square" aria-hidden="true"></i>
+                            </div>
+                            <h4 class="skill-name">JavaScript</h4>
+                            <p class="skill-description">Web automation and testing scripts</p>
+                            <div class="skill-level">
+                                <div class="skill-bar">
+                                    <div class="skill-progress" style="width: 75%;"></div>
+                                </div>
+                                <span class="skill-percentage">75%</span>
+                            </div>
+                        </div>
+                        <div class="skill-card">
+                            <div class="skill-icon" style="background: linear-gradient(135deg, #e34f26, #f7931e);">
+                                <i class="fab fa-html5" aria-hidden="true"></i>
+                            </div>
+                            <h4 class="skill-name">HTML5</h4>
+                            <p class="skill-description">Web testing and validation</p>
+                            <div class="skill-level">
+                                <div class="skill-bar">
+                                    <div class="skill-progress" style="width: 85%;"></div>
+                                </div>
+                                <span class="skill-percentage">85%</span>
+                            </div>
+                        </div>
+                        <div class="skill-card">
+                            <div class="skill-icon" style="background: linear-gradient(135deg, #1572b6, #33a9dc);">
+                                <i class="fab fa-css3-alt" aria-hidden="true"></i>
+                            </div>
+                            <h4 class="skill-name">CSS3</h4>
+                            <p class="skill-description">Responsive design validation</p>
+                            <div class="skill-level">
+                                <div class="skill-bar">
+                                    <div class="skill-progress" style="width: 80%;"></div>
+                                </div>
+                                <span class="skill-percentage">80%</span>
+                            </div>
+                        </div>
+                        <div class="skill-card">
+                            <div class="skill-icon" style="background: linear-gradient(135deg, #68a063, #8cc84b);">
+                                <i class="fab fa-node-js" aria-hidden="true"></i>
+                            </div>
+                            <h4 class="skill-name">Node.js</h4>
+                            <p class="skill-description">Server-side testing automation</p>
+                            <div class="skill-level">
+                                <div class="skill-bar">
+                                    <div class="skill-progress" style="width: 70%;"></div>
+                                </div>
+                                <span class="skill-percentage">70%</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="skill-category fade-in">
+                    <h3 class="category-title">
+                        <i class="fas fa-robot category-icon" aria-hidden="true"></i>
+                        Test Automation Frameworks
+                    </h3>
+                    <div class="skills-grid">
+                        <div class="skill-card">
+                            <div class="skill-icon" style="background: linear-gradient(135deg, #43b02a, #6cbf00);">
+                                <i class="fas fa-spider" aria-hidden="true"></i>
+                            </div>
+                            <h4 class="skill-name">Selenium</h4>
+                            <p class="skill-description">Cross-browser automation testing</p>
+                            <div class="skill-level">
+                                <div class="skill-bar">
+                                    <div class="skill-progress" style="width: 95%;"></div>
+                                </div>
+                                <span class="skill-percentage">95%</span>
+                            </div>
+                        </div>
+                        <div class="skill-card">
+                            <div class="skill-icon" style="background: linear-gradient(135deg, #2d72b8, #5ba3f5);">
+                                <i class="fas fa-mobile-alt" aria-hidden="true"></i>
+                            </div>
+                            <h4 class="skill-name">Appium</h4>
+                            <p class="skill-description">Mobile app automation for iOS/Android</p>
+                            <div class="skill-level">
+                                <div class="skill-bar">
+                                    <div class="skill-progress" style="width: 88%;"></div>
+                                </div>
+                                <span class="skill-percentage">88%</span>
+                            </div>
+                        </div>
+                        <div class="skill-card">
+                            <div class="skill-icon" style="background: linear-gradient(135deg, #2eaa4f, #45bf55);">
+                                <i class="fas fa-theater-masks" aria-hidden="true"></i>
+                            </div>
+                            <h4 class="skill-name">Playwright</h4>
+                            <p class="skill-description">Modern web testing framework</p>
+                            <div class="skill-level">
+                                <div class="skill-bar">
+                                    <div class="skill-progress" style="width: 85%;"></div>
+                                </div>
+                                <span class="skill-percentage">85%</span>
+                            </div>
+                        </div>
+                        <div class="skill-card">
+                            <div class="skill-icon" style="background: linear-gradient(135deg, #3776ab, #ffd343);">
+                                <i class="fas fa-vial" aria-hidden="true"></i>
+                            </div>
+                            <h4 class="skill-name">Pytest</h4>
+                            <p class="skill-description">Python-based testing framework</p>
+                            <div class="skill-level">
+                                <div class="skill-bar">
+                                    <div class="skill-progress" style="width: 90%;"></div>
+                                </div>
+                                <span class="skill-percentage">90%</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="skill-category fade-in">
+                    <h3 class="category-title">
+                        <i class="fas fa-vial category-icon" aria-hidden="true"></i>
+                        Testing Methodologies
+                    </h3>
+                    <div class="skills-grid">
+                        <div class="skill-card">
+                            <div class="skill-icon" style="background: linear-gradient(135deg, #ff6b6b, #ff8e53);">
+                                <i class="fas fa-bug" aria-hidden="true"></i>
+                            </div>
+                            <h4 class="skill-name">Manual Testing</h4>
+                            <p class="skill-description">Exploratory and scripted testing</p>
+                            <div class="skill-level">
+                                <div class="skill-bar">
+                                    <div class="skill-progress" style="width: 92%;"></div>
+                                </div>
+                                <span class="skill-percentage">92%</span>
+                            </div>
+                        </div>
+                        <div class="skill-card">
+                            <div class="skill-icon" style="background: linear-gradient(135deg, #00c4b4, #00e676);">
+                                <i class="fas fa-tachometer-alt" aria-hidden="true"></i>
+                            </div>
+                            <h4 class="skill-name">Performance Testing</h4>
+                            <p class="skill-description">LoadRunner and JMeter for load/stress testing</p>
+                            <div class="skill-level">
+                                <div class="skill-bar">
+                                    <div class="skill-progress" style="width: 85%;"></div>
+                                </div>
+                                <span class="skill-percentage">85%</span>
+                            </div>
+                        </div>
+                        <div class="skill-card">
+                            <div class="skill-icon" style="background: linear-gradient(135deg, #7b1fa2, #9c27b0);">
+                                <i class="fas fa-shield-alt" aria-hidden="true"></i>
+                            </div>
+                            <h4 class="skill-name">Security Testing</h4>
+                            <p class="skill-description">Vulnerability assessment and penetration testing</p>
+                            <div class="skill-level">
+                                <div class="skill-bar">
+                                    <div class="skill-progress" style="width: 80%;"></div>
+                                </div>
+                                <span class="skill-percentage">80%</span>
+                            </div>
+                        </div>
+                        <div class="skill-card">
+                            <div class="skill-icon" style="background: linear-gradient(135deg, #ff6b6b, #ff8e53);">
+                                <i class="fas fa-code-branch" aria-hidden="true"></i>
+                            </div>
+                            <h4 class="skill-name">API Testing</h4>
+                            <p class="skill-description">REST/GraphQL validation with Postman</p>
+                            <div class="skill-level">
+                                <div class="skill-bar">
+                                    <div class="skill-progress" style="width: 90%;"></div>
+                                </div>
+                                <span class="skill-percentage">90%</span>
+                            </div>
+                        </div>
+                        <div class="skill-card">
+                            <div class="skill-icon" style="background: linear-gradient(135deg, #00c4b4, #00e676);">
+                                <i class="fas fa-check-double" aria-hidden="true"></i>
+                            </div>
+                            <h4 class="skill-name">Functional Testing</h4>
+                            <p class="skill-description">End-to-end feature validation</p>
+                            <div class="skill-level">
+                                <div class="skill-bar">
+                                    <div class="skill-progress" style="width: 88%;"></div>
+                                </div>
+                                <span class="skill-percentage">88%</span>
+                            </div>
+                        </div>
+                        <div class="skill-card">
+                            <div class="skill-icon" style="background: linear-gradient(135deg, #2d72b8, #5ba3f5);">
+                                <i class="fas fa-redo" aria-hidden="true"></i>
+                            </div>
+                            <h4 class="skill-name">Regression Testing</h4>
+                            <p class="skill-description">Ensuring existing functionality stability</p>
+                            <div class="skill-level">
+                                <div class="skill-bar">
+                                    <div class="skill-progress" style="width: 85%;"></div>
+                                </div>
+                                <span class="skill-percentage">85%</span>
+                            </div>
+                        </div>
+                        <div class="skill-card">
+                            <div class="skill-icon" style="background: linear-gradient(135deg, #ff6b6b, #ff8e53);">
+                                <i class="fas fa-check-circle" aria-hidden="true"></i>
+                            </div>
+                            <h4 class="skill-name">Smoke Testing</h4>
+                            <p class="skill-description">Basic functionality verification</p>
+                            <div class="skill-level">
+                                <div class="skill-bar">
+                                    <div class="skill-progress" style="width: 90%;"></div>
+                                </div>
+                                <span class="skill-percentage">90%</span>
+                            </div>
+                        </div>
+                        <div class="skill-card">
+                            <div class="skill-icon" style="background: linear-gradient(135deg, #00c4b4, #00e676);">
+                                <i class="fas fa-check-square" aria-hidden="true"></i>
+                            </div>
+                            <h4 class="skill-name">Sanity Testing</h4>
+                            <p class="skill-description">Focused verification of specific functionality</p>
+                            <div class="skill-level">
+                                <div class="skill-bar">
+                                    <div class="skill-progress" style="width: 88%;"></div>
+                                </div>
+                                <span class="skill-percentage">88%</span>
+                            </div>
+                        </div>
+                        <div class="skill-card">
+                            <div class="skill-icon" style="background: linear-gradient(135deg, #2d72b8, #5ba3f5);">
+                                <i class="fas fa-mobile-alt" aria-hidden="true"></i>
+                            </div>
+                            <h4 class="skill-name">Mobile Testing</h4>
+                            <p class="skill-description">iOS and Android app testing</p>
+                            <div class="skill-level">
+                                <div class="skill-bar">
+                                    <div class="skill-progress" style="width: 85%;"></div>
+                                </div>
+                                <span class="skill-percentage">85%</span>
+                            </div>
+                        </div>
+                        <div class="skill-card">
+                            <div class="skill-icon" style="background: linear-gradient(135deg, #ff6b6b, #ff8e53);">
+                                <i class="fas fa-globe" aria-hidden="true"></i>
+                            </div>
+                            <h4 class="skill-name">Cross-browser Testing</h4>
+                            <p class="skill-description">Browser compatibility testing</p>
+                            <div class="skill-level">
+                                <div class="skill-bar">
+                                    <div class="skill-progress" style="width: 90%;"></div>
+                                </div>
+                                <span class="skill-percentage">90%</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="skill-category fade-in">
+                    <h3 class="category-title">
+                        <i class="fas fa-tools category-icon" aria-hidden="true"></i>
+                        Tools & Platforms
+                    </h3>
+                    <div class="skills-grid">
+                        <div class="skill-card">
+                            <div class="skill-icon" style="background: linear-gradient(135deg, #ff6b6b, #ff8e53);">
+                                <i class="fab fa-jira" aria-hidden="true"></i>
+                            </div>
+                            <h4 class="skill-name">JIRA</h4>
+                            <p class="skill-description">Defect tracking and management</p>
+                            <div class="skill-level">
+                                <div class="skill-bar">
+                                    <div class="skill-progress" style="width: 90%;"></div>
+                                </div>
+                                <span class="skill-percentage">90%</span>
+                            </div>
+                        </div>
+                        <div class="skill-card">
+                            <div class="skill-icon" style="background: linear-gradient(135deg, #00c4b4, #00e676);">
+                                <i class="fab fa-git" aria-hidden="true"></i>
+                            </div>
+                            <h4 class="skill-name">Git</h4>
+                            <p class="skill-description">Version control for test scripts</p>
+                            <div class="skill-level">
+                                <div class="skill-bar">
+                                    <div class="skill-progress" style="width: 85%;"></div>
+                                </div>
+                                <span class="skill-percentage">85%</span>
+                            </div>
+                        </div>
+                        <div class="skill-card">
+                            <div class="skill-icon" style="background: linear-gradient(135deg, #7289da, #8ea1e1);">
+                                <i class="fab fa-slack" aria-hidden="true"></i>
+                            </div>
+                            <h4 class="skill-name">Slack</h4>
+                            <p class="skill-description">Team communication and collaboration</p>
+                            <div class="skill-level">
+                                <div class="skill-bar">
+                                    <div class="skill-progress" style="width: 80%;"></div>
+                                </div>
+                                <span class="skill-percentage">80%</span>
+                            </div>
+                        </div>
+                        <div class="skill-card">
+                            <div class="skill-icon" style="background: linear-gradient(135deg, #0052cc, #0065ff);">
+                                <i class="fas fa-book" aria-hidden="true"></i>
+                            </div>
+                            <h4 class="skill-name">Confluence</h4>
+                            <p class="skill-description">Documentation and collaboration</p>
+                            <div class="skill-level">
+                                <div class="skill-bar">
+                                    <div class="skill-progress" style="width: 85%;"></div>
+                                </div>
+                                <span class="skill-percentage">85%</span>
+                            </div>
+                        </div>
+                        <div class="skill-card">
+                            <div class="skill-icon" style="background: linear-gradient(135deg, #f06595, #ff87ab);">
+                                <i class="fab fa-figma" aria-hidden="true"></i>
+                            </div>
+                            <h4 class="skill-name">Figma</h4>
+                            <p class="skill-description">UI/UX validation and prototyping</p>
+                            <div class="skill-level">
+                                <div class="skill-bar">
+                                    <div class="skill-progress" style="width: 75%;"></div>
+                                </div>
+                                <span class="skill-percentage">75%</span>
+                            </div>
+                        </div>
+                        <div class="skill-card">
+                            <div class="skill-icon" style="background: linear-gradient(135deg, #0078d4, #00b7d4);">
+                                <i class="fab fa-windows" aria-hidden="true"></i>
+                            </div>
+                            <h4 class="skill-name">Windows</h4>
+                            <p class="skill-description">Testing on Windows platforms</p>
+                            <div class="skill-level">
+                                <div class="skill-bar">
+                                    <div class="skill-progress" style="width: 90%;"></div>
+                                </div>
+                                <span class="skill-percentage">90%</span>
+                            </div>
+                        </div>
+                        <div class="skill-card">
+                            <div class="skill-icon" style="background: linear-gradient(135deg, #000000, #4a4a4a);">
+                                <i class="fab fa-apple" aria-hidden="true"></i>
+                            </div>
+                            <h4 class="skill-name">macOS</h4>
+                            <p class="skill-description">Testing on macOS platforms</p>
+                            <div class="skill-level">
+                                <div class="skill-bar">
+                                    <div class="skill-progress" style="width: 85%;"></div>
+                                </div>
+                                <span class="skill-percentage">85%</span>
+                            </div>
+                        </div>
+                        <div class="skill-card">
+                            <div class="skill-icon" style="background: linear-gradient(135deg, #34c759, #5cd865);">
+                                <i class="fab fa-android" aria-hidden="true"></i>
+                            </div>
+                            <h4 class="skill-name">Android</h4>
+                            <p class="skill-description">Android app testing</p>
+                            <div class="skill-level">
+                                <div class="skill-bar">
+                                    <div class="skill-progress" style="width: 88%;"></div>
+                                </div>
+                                <span class="skill-percentage">88%</span>
+                            </div>
+                        </div>
+                        <div class="skill-card">
+                            <div class="skill-icon" style="background: linear-gradient(135deg, #000000, #4a4a4a);">
+                                <i class="fab fa-apple" aria-hidden="true"></i>
+                            </div>
+                            <h4 class="skill-name">iOS</h4>
+                            <p class="skill-description">iOS app testing</p>
+                            <div class="skill-level">
+                                <div class="skill-bar">
+                                    <div class="skill-progress" style="width: 88%;"></div>
+                                </div>
+                                <span class="skill-percentage">88%</span>
+                            </div>
+                        </div>
+                        <div class="skill-card">
+                            <div class="skill-icon" style="background: linear-gradient(135deg, #0078d4, #00b7d4);">
+                                <i class="fas fa-code" aria-hidden="true"></i>
+                            </div>
+                            <h4 class="skill-name">VS Code</h4>
+                            <p class="skill-description">IDE for test script development</p>
+                            <div class="skill-level">
+                                <div class="skill-bar">
+                                    <div class="skill-progress" style="width: 90%;"></div>
+                                </div>
+                                <span class="skill-percentage">90%</span>
+                            </div>
+                        </div>
+                        <div class="skill-card">
+                            <div class="skill-icon" style="background: linear-gradient(135deg, #3776ab, #ffd343);">
+                                <i class="fas fa-code" aria-hidden="true"></i>
+                            </div>
+                            <h4 class="skill-name">PyCharm</h4>
+                            <p class="skill-description">Python IDE for test automation</p>
+                            <div class="skill-level">
+                                <div class="skill-bar">
+                                    <div class="skill-progress" style="width: 85%;"></div>
+                                </div>
+                                <span class="skill-percentage">85%</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="skill-category fade-in">
+                    <h3 class="category-title">
+                        <i class="fas fa-cogs category-icon" aria-hidden="true"></i>
+                        QA Processes & Methodologies
+                    </h3>
+                    <div class="skills-grid">
+                        <div class="skill-card">
+                            <div class="skill-icon" style="background: linear-gradient(135deg, #00c4b4, #00e676);">
+                                <i class="fas fa-clipboard-check" aria-hidden="true"></i>
+                            </div>
+                            <h4 class="skill-name">Quality Assurance Processes</h4>
+                            <p class="skill-description">Implementing QA best practices</p>
+                            <div class="skill-level">
+                                <div class="skill-bar">
+                                    <div class="skill-progress" style="width: 92%;"></div>
+                                </div>
+                                <span class="skill-percentage">92%</span>
+                            </div>
+                        </div>
+                        <div class="skill-card">
+                            <div class="skill-icon" style="background: linear-gradient(135deg, #ff6b6b, #ff8e53);">
+                                <i class="fas fa-clipboard-list" aria-hidden="true"></i>
+                            </div>
+                            <h4 class="skill-name">Test Case Design</h4>
+                            <p class="skill-description">Creating comprehensive test cases</p>
+                            <div class="skill-level">
+                                <div class="skill-bar">
+                                    <div class="skill-progress" style="width: 90%;"></div>
+                                </div>
+                                <span class="skill-percentage">90%</span>
+                            </div>
+                        </div>
+                        <div class="skill-card">
+                            <div class="skill-icon" style="background: linear-gradient(135deg, #2d72b8, #5ba3f5);">
+                                <i class="fas fa-tasks" aria-hidden="true"></i>
+                            </div>
+                            <h4 class="skill-name">Test Planning</h4>
+                            <p class="skill-description">Strategic test planning and execution</p>
+                            <div class="skill-level">
+                                <div class="skill-bar">
+                                    <div class="skill-progress" style="width: 88%;"></div>
+                                </div>
+                                <span class="skill-percentage">88%</span>
+                            </div>
+                        </div>
+                        <div class="skill-card">
+                            <div class="skill-icon" style="background: linear-gradient(135deg, #00c4b4, #00e676);">
+                                <i class="fas fa-project-diagram" aria-hidden="true"></i>
+                            </div>
+                            <h4 class="skill-name">Agile Methodologies</h4>
+                            <p class="skill-description">Scrum and Kanban workflows</p>
+                            <div class="skill-level">
+                                <div class="skill-bar">
+                                    <div class="skill-progress" style="width: 90%;"></div>
+                                </div>
+                                <span class="skill-percentage">90%</span>
+                            </div>
+                        </div>
+                        <div class="skill-card">
+                            <div class="skill-icon" style="background: linear-gradient(135deg, #ff6b6b, #ff8e53);">
+                                <i class="fas fa-code-branch" aria-hidden="true"></i>
+                            </div>
+                            <h4 class="skill-name">CI/CD</h4>
+                            <p class="skill-description">Continuous integration and delivery pipelines</p>
+                            <div class="skill-level">
+                                <div class="skill-bar">
+                                    <div class="skill-progress" style="width: 85%;"></div>
+                                </div>
+                                <span class="skill-percentage">85%</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="skill-category fade-in">
+                    <h3 class="category-title">
+                        <i class="fas fa-file-excel category-icon" aria-hidden="true"></i>
+                        Productivity Tools
+                    </h3>
+                    <div class="skills-grid">
+                        <div class="skill-card">
+                            <div class="skill-icon" style="background: linear-gradient(135deg, #1f6e43, #2ed573);">
+                                <i class="fas fa-file-excel" aria-hidden="true"></i>
+                            </div>
+                            <h4 class="skill-name">MS Excel</h4>
+                            <p class="skill-description">Test data management and reporting</p>
+                            <div class="skill-level">
+                                <div class="skill-bar">
+                                    <div class="skill-progress" style="width: 85%;"></div>
+                                </div>
+                                <span class="skill-percentage">85%</span>
+                            </div>
+                        </div>
+                        <div class="skill-card">
+                            <div class="skill-icon" style="background: linear-gradient(135deg, #d81b60, #f06292);">
+                                <i class="fas fa-file-powerpoint" aria-hidden="true"></i>
+                            </div>
+                            <h4 class="skill-name">PowerPoint</h4>
+                            <p class="skill-description">Test result presentations</p>
+                            <div class="skill-level">
+                                <div class="skill-bar">
+                                    <div class="skill-progress" style="width: 80%;"></div>
+                                </div>
+                                <span class="skill-percentage">80%</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="section">
+        <div class="container">
+            <h2 class="section-title fade-in">Get in Touch</h2>
+            <p class="section-subtitle fade-in">Let's discuss your QA automation needs</p>
+
+            <div class="contact-container">
+                <div class="contact-info slide-in-left">
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope" aria-hidden="true"></i>
+                        </div>
+                        <div>
+                            <h4>Email</h4>
+                            <a href="mailto:shireeshatheegulla.55@gmail.com">shireeshatheegulla.55@gmail.com</a>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone" aria-hidden="true"></i>
+                        </div>
+                        <!-- <div>
+                            <h4>Phone</h4>
+                            <a href="tel:+1234567890">+1 (234) 567-890</a>
+                        </div> -->
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fab fa-linkedin" aria-hidden="true"></i>
+                        </div>
+                        <div>
+                            <h4>LinkedIn</h4>
+                            <a href="https://linkedin.com/in/shireeshatheegulla" target="_blank"
+                                rel="noopener noreferrer">linkedin.com/in/shireeshatheegulla</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contact-form slide-in-right">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" required aria-required="true">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required aria-required="true">
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" rows="6" required aria-required="true"></textarea>
+                    </div>
+                    <button type="button" class="submit-btn" onclick="handleContactForm()">
+                        <span class="btn-text">Send Message</span>
+                        <span class="loader" aria-hidden="true"></span>
+                    </button>
+                    <div class="visitor-counter" id="visitor-counter">
+                        <span class="counter-text">Visitors: 0</span>
+                        <span class="loader" aria-hidden="true"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="social-links">
+            <a href="https://www.linkedin.com/in/shireeshatheegulla" class="social-link" target="_blank"
+                rel="noopener noreferrer" aria-label="LinkedIn Profile">
+                <i class="fab fa-linkedin"></i>
+            </a>
+            <a href="https://github.com/shireeshatheegulla" class="social-link" target="_blank"
+                rel="noopener noreferrer" aria-label="GitHub Profile">
+                <i class="fab fa-github"></i>
+            </a>
+        </div>
+        <p>© 2025 Shireesha Theegulla. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Matrix Rain Effect
+        function createMatrixRain() {
+            const canvas = document.createElement('canvas');
+            canvas.style.position = 'fixed';
+            canvas.style.top = '0';
+            canvas.style.left = '0';
+            canvas.style.width = '100%';
+            canvas.style.height = '100%';
+            canvas.style.pointerEvents = 'none';
+            canvas.style.zIndex = '-1';
+            canvas.style.opacity = '0.1';
+            document.getElementById('matrix-rain').appendChild(canvas);
+
+            const ctx = canvas.getContext('2d');
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+
+            const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789@#$%^&*';
+            const fontSize = 14;
+            const columns = canvas.width / fontSize;
+            const drops = [];
+
+            for (let x = 0; x < columns; x++) {
+                drops[x] = 1;
+            }
+
+            function draw() {
+                ctx.fillStyle = 'rgba(0, 0, 0, 0.05)';
+                ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+                ctx.fillStyle = '#00ff88';
+                ctx.font = fontSize + 'px JetBrains Mono';
+
+                for (let i = 0; i < drops.length; i++) {
+                    const text = chars.charAt(Math.floor(Math.random() * chars.length));
+                    ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+
+                    if (drops[i] * fontSize > canvas.height && Math.random() > 0.975)
+                        drops[i] = 0;
+
+                    drops[i]++;
+                }
+            }
+
+            setInterval(draw, 33);
+            window.addEventListener('resize', () => {
+                canvas.width = window.innerWidth;
+                canvas.height = window.innerHeight;
+            });
+        }
+
+        // Scroll Animations
+        function handleScrollAnimations() {
+            const elements = document.querySelectorAll('.fade-in, .slide-in-left, .slide-in-right');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active');
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            elements.forEach(element => observer.observe(element));
+        }
+
+        // Async Form Submission Handler
+        async function handleContactForm() {
+            const submitBtn = document.querySelector('.submit-btn');
+            submitBtn.classList.add('loading');
+            submitBtn.disabled = true;
+
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const message = document.getElementById('message').value;
+
+            if (!name || !email || !message) {
+                alert('Please fill all fields');
+                submitBtn.classList.remove('loading');
+                submitBtn.disabled = false;
+                return;
+            }
+
+            try {
+                const response = await fetch('https://form-submit-gray.vercel.app/api/contact', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ name, email, message }),
+                });
+
+                const result = await response.json();
+
+                if (response.ok) {
+                    alert(result.message);
+                    document.getElementById('name').value = '';
+                    document.getElementById('email').value = '';
+                    document.getElementById('message').value = '';
+                    await fetchVisitorCounter(); // Update counter after submission
+                } else {
+                    alert(result.error || 'Failed to send message');
+                }
+            } catch (error) {
+                console.error('Error submitting form:', error);
+                alert('An error occurred. Please try again later.');
+            } finally {
+                submitBtn.classList.remove('loading');
+                submitBtn.disabled = false;
+            }
+        }
+
+        // Async Visitor Counter
+        async function fetchVisitorCounter() {
+            const counterElement = document.getElementById('visitor-counter');
+            counterElement.classList.add('loading');
+
+            try {
+                const response = await fetch('https://form-submit-gray.vercel.app/api/visitors');
+                const visitors = await response.json();
+                counterElement.classList.remove('loading');
+                counterElement.querySelector('.counter-text').textContent = `Visitors: ${visitors.length}`;
+            } catch (error) {
+                console.error('Error fetching visitor count:', error);
+                counterElement.classList.remove('loading');
+                counterElement.querySelector('.counter-text').textContent = 'Visitors: Error';
+            }
+        }
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', () => {
+            createMatrixRain();
+            handleScrollAnimations();
+            fetchVisitorCounter(); // Initial fetch of visitor count
+        });
+    </script>
+</body>
+
+</html>
