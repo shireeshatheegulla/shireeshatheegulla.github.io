@@ -68,7 +68,7 @@
             position: absolute;
             top: -100%;
             font-family: 'JetBrains Mono', monospace;
-            font-size: 14px;
+            font-size: clamp(10px, 2vw, 12px);
             color: var(--accent-color);
             animation: matrix-fall linear infinite;
         }
@@ -97,12 +97,12 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 0 2rem;
+            padding: 0 1rem;
         }
 
         .logo {
             font-family: 'JetBrains Mono', monospace;
-            font-size: 1.8rem;
+            font-size: clamp(1.2rem, 4vw, 1.5rem);
             font-weight: 700;
             color: var(--accent-color);
             text-decoration: none;
@@ -122,7 +122,7 @@
         .nav-links {
             display: flex;
             list-style: none;
-            gap: 2rem;
+            gap: clamp(1rem, 3vw, 1.5rem);
         }
 
         .nav-links a {
@@ -131,7 +131,8 @@
             font-weight: 500;
             transition: all 0.3s ease;
             position: relative;
-            padding: 0.5rem 1rem;
+            padding: 0.5rem;
+            font-size: clamp(0.9rem, 2.5vw, 1rem);
         }
 
         .nav-links a:hover,
@@ -157,39 +158,49 @@
             width: 100%;
         }
 
+        .menu-toggle {
+            display: none;
+            font-size: 1.5rem;
+            color: var(--text-secondary);
+            cursor: pointer;
+        }
+
         .hero {
-            height: 100vh;
+            min-height: 100vh;
             display: flex;
             align-items: center;
             position: relative;
             background: radial-gradient(ellipse at center, rgba(0, 255, 136, 0.1) 0%, transparent 70%);
+            padding: 4rem 1rem;
         }
 
         .hero-container {
             max-width: 1400px;
             margin: 0 auto;
-            padding: 0 2rem;
+            padding: 0 1rem;
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
+            grid-template-columns: 1fr;
+            gap: 2rem;
             align-items: center;
         }
 
         .hero-content h1 {
-            font-size: 4rem;
+            font-size: clamp(2rem, 8vw, 3rem);
             font-weight: 700;
             margin-bottom: 1rem;
             background: linear-gradient(135deg, var(--accent-color), var(--accent-secondary));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
+            text-align: center;
         }
 
         .hero-content .subtitle {
-            font-size: 1.5rem;
+            font-size: clamp(1rem, 3.5vw, 1.2rem);
             color: var(--text-secondary);
             margin-bottom: 2rem;
             font-family: 'JetBrains Mono', monospace;
+            text-align: center;
         }
 
         .typing-text {
@@ -210,9 +221,7 @@
         }
 
         @keyframes blink-caret {
-
-            from,
-            to {
+            from, to {
                 border-color: transparent;
             }
 
@@ -223,8 +232,8 @@
 
         .hero-stats {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 2rem;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1rem;
             margin: 2rem 0;
         }
 
@@ -237,21 +246,21 @@
         }
 
         .stat-number {
-            font-size: 2rem;
+            font-size: clamp(1.5rem, 4vw, 1.8rem);
             font-weight: 700;
             color: var(--accent-color);
             font-family: 'JetBrains Mono', monospace;
         }
 
         .stat-label {
-            font-size: 0.9rem;
+            font-size: clamp(0.8rem, 2.5vw, 0.9rem);
             color: var(--text-secondary);
         }
 
         .hero-code {
             background: var(--secondary-bg);
             border-radius: 15px;
-            padding: 2rem;
+            padding: 1.5rem;
             border: 1px solid var(--border-color);
             position: relative;
             overflow: hidden;
@@ -290,7 +299,7 @@
 
         .code-content {
             font-family: 'JetBrains Mono', monospace;
-            font-size: 0.9rem;
+            font-size: clamp(0.8rem, 2vw, 0.9rem);
             line-height: 1.8;
         }
 
@@ -320,19 +329,19 @@
         }
 
         .section {
-            padding: 6rem 0;
+            padding: 4rem 1rem;
             position: relative;
         }
 
         .container {
             max-width: 1400px;
             margin: 0 auto;
-            padding: 0 2rem;
+            padding: 0 1rem;
         }
 
         .section-title {
             text-align: center;
-            font-size: 3rem;
+            font-size: clamp(1.8rem, 6vw, 2.5rem);
             font-weight: 700;
             margin-bottom: 1rem;
             background: linear-gradient(135deg, var(--accent-color), var(--accent-secondary));
@@ -343,21 +352,21 @@
 
         .section-subtitle {
             text-align: center;
-            font-size: 1.2rem;
+            font-size: clamp(0.9rem, 2.5vw, 1rem);
             color: var(--text-secondary);
-            margin-bottom: 4rem;
+            margin-bottom: 2rem;
             font-family: 'JetBrains Mono', monospace;
         }
 
         .skills-container {
             display: grid;
-            gap: 4rem;
+            gap: 2rem;
         }
 
         .skill-category {
             background: var(--secondary-bg);
-            border-radius: 20px;
-            padding: 3rem;
+            border-radius: 15px;
+            padding: 2rem;
             border: 1px solid var(--border-color);
             position: relative;
             overflow: hidden;
@@ -374,17 +383,17 @@
         }
 
         .category-title {
-            font-size: 2rem;
+            font-size: clamp(1.5rem, 4vw, 1.8rem);
             font-weight: 600;
-            margin-bottom: 2rem;
+            margin-bottom: 1.5rem;
             color: var(--accent-color);
             display: flex;
             align-items: center;
-            gap: 1rem;
+            gap: 0.5rem;
         }
 
         .category-icon {
-            font-size: 2.5rem;
+            font-size: clamp(1.8rem, 5vw, 2rem);
             background: var(--gradient-1);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
@@ -393,14 +402,14 @@
 
         .skills-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
         }
 
         .skill-card {
             background: var(--card-bg);
             border-radius: 15px;
-            padding: 2rem;
+            padding: 1.5rem;
             border: 1px solid var(--border-color);
             transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             position: relative;
@@ -427,20 +436,20 @@
 
         .skill-card:hover,
         .skill-card:focus-within {
-            transform: translateY(-10px) scale(1.02);
+            želtransform: translateY(-10px) scale(1.02);
             border-color: var(--accent-color);
             box-shadow: 0 20px 40px rgba(0, 255, 136, 0.2);
         }
 
         .skill-icon {
-            width: 60px;
-            height: 60px;
-            border-radius: 12px;
+            width: 50px;
+            height: 50px;
+            border-radius: 10px;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin-bottom: 1.5rem;
-            font-size: 2rem;
+            margin-bottom: 1rem;
+            font-size: 1.8rem;
             background: var(--gradient-1);
             color: white;
             transition: all 0.3s ease;
@@ -452,7 +461,7 @@
         }
 
         .skill-name {
-            font-size: 1.3rem;
+            font-size: clamp(1.1rem, 3vw, 1.2rem);
             font-weight: 600;
             margin-bottom: 0.5rem;
             color: var(--text-primary);
@@ -460,14 +469,14 @@
 
         .skill-description {
             color: var(--text-secondary);
-            font-size: 0.9rem;
-            margin-bottom: 1.5rem;
+            font-size: clamp(0.8rem, 2.5vw, 0.9rem);
+            margin-bottom: 1rem;
         }
 
         .skill-level {
             display: flex;
             align-items: center;
-            gap: 1rem;
+            gap: 0.5rem;
         }
 
         .skill-bar {
@@ -511,19 +520,20 @@
             font-family: 'JetBrains Mono', monospace;
             font-weight: 600;
             color: var(--accent-color);
+            font-size: clamp(0.8rem, 2.5vw, 0.9rem);
         }
 
         .contact-container {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
+            grid-template-columns: 1fr;
+            gap: 2rem;
             align-items: start;
         }
 
         .contact-info {
             background: var(--secondary-bg);
-            border-radius: 20px;
-            padding: 3rem;
+            border-radius: 15px;
+            padding: 2rem;
             border: 1px solid var(--border-color);
         }
 
@@ -531,7 +541,7 @@
             display: flex;
             align-items: center;
             gap: 1rem;
-            margin-bottom: 2rem;
+            margin-bottom: 1.5rem;
             padding: 1rem;
             background: var(--card-bg);
             border-radius: 10px;
@@ -545,26 +555,26 @@
         }
 
         .contact-icon {
-            width: 50px;
-            height: 50px;
-            border-radius: 10px;
+            width: 40px;
+            height: 40px;
+            border-radius: 8px;
             background: var(--gradient-1);
             display: flex;
             align-items: center;
             justify-content: center;
             color: white;
-            font-size: 1.2rem;
+            font-size: 1rem;
         }
 
         .contact-form {
             background: var(--secondary-bg);
-            border-radius: 20px;
-            padding: 3rem;
+            border-radius: 15px;
+            padding: 2rem;
             border: 1px solid var(--border-color);
         }
 
         .form-group {
-            margin-bottom: 2rem;
+            margin-bottom: 1.5rem;
         }
 
         .form-group label {
@@ -572,17 +582,18 @@
             margin-bottom: 0.5rem;
             color: var(--text-secondary);
             font-weight: 500;
+            font-size: clamp(0.9rem, 2.5vw, 1rem);
         }
 
         .form-group input,
         .form-group textarea {
             width: 100%;
-            padding: 1rem;
+            padding: 0.8rem;
             background: var(--card-bg);
             border: 1px solid var(--border-color);
-            border-radius: 10px;
+            border-radius: 8px;
             color: var(--text-primary);
-            font-size: 1rem;
+            font-size: clamp(0.9rem, 2.5vw, 1rem);
             transition: all 0.3s ease;
         }
 
@@ -595,12 +606,12 @@
 
         .submit-btn {
             width: 100%;
-            padding: 1rem 2rem;
+            padding: 0.8rem 1.5rem;
             background: linear-gradient(135deg, var(--accent-color), var(--accent-secondary));
             color: var(--primary-bg);
             border: none;
-            border-radius: 10px;
-            font-size: 1.1rem;
+            border-radius: 8px;
+            font-size: clamp(0.9rem, 2.5vw, 1rem);
             font-weight: 600;
             cursor: pointer;
             transition: all 0.3s ease;
@@ -637,13 +648,13 @@
 
         .visitor-counter {
             text-align: center;
-            margin-top: 2rem;
+            margin-top: 1.5rem;
             font-family: 'JetBrains Mono', monospace;
-            font-size: 1.2rem;
+            font-size: clamp(0.9rem, 2.5vw, 1rem);
             color: var(--accent-color);
             background: var(--card-bg);
-            padding: 1rem;
-            border-radius: 10px;
+            padding: 0.8rem;
+            border-radius: 8px;
             border: 1px solid var(--border-color);
             display: flex;
             align-items: center;
@@ -677,28 +688,28 @@
         footer {
             background: var(--secondary-bg);
             border-top: 1px solid var(--border-color);
-            padding: 3rem 0;
+            padding: 2rem 1rem;
             text-align: center;
         }
 
         .social-links {
             display: flex;
             justify-content: center;
-            gap: 1rem;
-            margin-bottom: 2rem;
+            gap: 0.8rem;
+            margin-bottom: 1.5rem;
         }
 
         .social-link {
-            width: 60px;
-            height: 60px;
-            border-radius: 12px;
+            width: 50px;
+            height: 50px;
+            border-radius: 10px;
             background: var(--card-bg);
             display: flex;
             align-items: center;
             justify-content: center;
             color: var(--text-secondary);
             text-decoration: none;
-            font-size: 1.5rem;
+            font-size: 1.2rem;
             transition: all 0.3s ease;
             border: 1px solid var(--border-color);
         }
@@ -711,40 +722,141 @@
             outline: none;
         }
 
-        @media (max-width: 1024px) {
+        /* Responsive Design */
+        @media (min-width: 768px) {
+            .nav-container {
+                padding: 0 2rem;
+            }
+
             .hero-container {
-                grid-template-columns: 1fr;
-                text-align: center;
+                grid-template-columns: 1fr 1fr;
+                padding: 0 2rem;
+                gap: 3rem;
+            }
+
+            .hero-content h1 {
+                text-align: left;
+            }
+
+            .hero-content .subtitle {
+                text-align: left;
             }
 
             .hero-stats {
                 grid-template-columns: repeat(3, 1fr);
+                gap: 1.5rem;
+            }
+
+            .skills-grid {
+                grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+                gap: 2rem;
             }
 
             .contact-container {
-                grid-template-columns: 1fr;
+                grid-template-columns: 1fr 1fr;
+                gap: 3rem;
             }
         }
 
-        @media (max-width: 768px) {
+        @media (max-width: 767px) {
             .nav-links {
                 display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background: var(--secondary-bg);
+                padding: 1rem;
+                border-top: 1px solid var(--border-color);
             }
 
-            .hero-content h1 {
-                font-size: 2.5rem;
+            .nav-links.active {
+                display: flex;
+            }
+
+            .menu-toggle {
+                display: block;
+            }
+
+            .hero {
+                padding: 3rem 1rem;
             }
 
             .hero-stats {
                 grid-template-columns: 1fr;
+            }
+
+            .hero-code {
+                padding: 1rem;
+            }
+
+            .section {
+                padding: 3rem 1rem;
             }
 
             .skills-grid {
                 grid-template-columns: 1fr;
             }
 
+            .skill-category {
+                padding: 1.5rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .logo {
+                font-size: 1.2rem;
+            }
+
+            .hero-content h1 {
+                font-size: 1.8rem;
+            }
+
+            .hero-content .subtitle {
+                font-size: 0.9rem;
+            }
+
+            .stat-item {
+                padding: 0.8rem;
+            }
+
+            .stat-number {
+                font-size: 1.2rem;
+            }
+
+            .stat-label {
+                font-size: 0.8rem;
+            }
+
             .section-title {
-                font-size: 2rem;
+                font-size: 1.5rem;
+            }
+
+            .section-subtitle {
+                font-size: 0.9rem;
+            }
+
+            .skill-icon {
+                width: 40px;
+                height: 40px;
+                font-size: 1.5rem;
+            }
+
+            .contact-item {
+                flex-direction: column;
+                text-align: center;
+                padding: 0.8rem;
+            }
+
+            .contact-icon {
+                margin-bottom: 0.5rem;
+            }
+
+            .social-link {
+                width: 40px;
+                height: 40px;
+                font-size: 1rem;
             }
         }
 
@@ -801,6 +913,7 @@
     <nav>
         <div class="nav-container">
             <a href="#home" class="logo" aria-label="Shireesha Theegulla Home">Shireesha</a>
+            <i class="fas fa-bars menu-toggle" aria-label="Toggle navigation menu"></i>
             <ul class="nav-links">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#skills">Skills</a></li>
@@ -840,14 +953,10 @@
                     </div>
                 </div>
                 <div class="code-content">
-                    <span class="code-line"><span class="keyword">class</span> <span
-                            class="function">QAAutomationEngineer</span>:</span>
-                    <span class="code-line"> <span class="keyword">def</span> <span
-                            class="function">__init__</span>(<span class="variable">self</span>):</span>
-                    <span class="code-line"> <span class="variable">self</span>.name = <span class="string">"Shireesha
-                            Theegulla"</span></span>
-                    <span class="code-line"> <span class="variable">self</span>.experience = <span class="string">"4+
-                            years"</span></span>
+                    <span class="code-line"><span class="keyword">class</span> <span class="function">QAAutomationEngineer</span>:</span>
+                    <span class="code-line"> <span class="keyword">def</span> <span class="function">__init__</span>(<span class="variable">self</span>):</span>
+                    <span class="code-line"> <span class="variable">self</span>.name = <span class="string">"Shireesha Theegulla"</span></span>
+                    <span class="code-line"> <span class="variable">self</span>.experience = <span class="string">"4+ years"</span></span>
                     <span class="code-line"> <span class="variable">self</span>.skills = [</span>
                     <span class="code-line"> <span class="string">"Selenium"</span>,</span>
                     <span class="code-line"> <span class="string">"Appium"</span>,</span>
@@ -855,10 +964,8 @@
                     <span class="code-line"> <span class="string">"Pytest"</span></span>
                     <span class="code-line"> ]</span>
                     <span class="code-line"> </span>
-                    <span class="code-line"> <span class="keyword">def</span> <span
-                            class="function">ensureQuality</span>(<span class="variable">self</span>):</span>
-                    <span class="code-line"> <span class="keyword">return</span> <span class="string">"Robust Automated
-                            Testing"</span></span>
+                    <span class="code-line"> <span class="keyword">def</span> <span class="function">ensureQuality</span>(<span class="variable">self</span>):</span>
+                    <span class="code-line"> <span class="keyword">return</span> <span class="string">"Robust Automated Testing"</span></span>
                 </div>
             </div>
         </div>
@@ -1496,7 +1603,7 @@
             canvas.height = window.innerHeight;
 
             const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789@#$%^&*';
-            const fontSize = 14;
+            const fontSize = Math.max(10, Math.min(12, window.innerWidth / 80));
             const columns = canvas.width / fontSize;
             const drops = [];
 
@@ -1526,6 +1633,10 @@
             window.addEventListener('resize', () => {
                 canvas.width = window.innerWidth;
                 canvas.height = window.innerHeight;
+                drops.length = 0;
+                for (let x = 0; x < canvas.width / fontSize; x++) {
+                    drops[x] = 1;
+                }
             });
         }
 
@@ -1576,7 +1687,7 @@
                     document.getElementById('name').value = '';
                     document.getElementById('email').value = '';
                     document.getElementById('message').value = '';
-                    await fetchVisitorCounter(); // Update counter after submission
+                    await fetchVisitorCounter();
                 } else {
                     alert(result.error || 'Failed to send message');
                 }
@@ -1606,11 +1717,16 @@
             }
         }
 
+        // Mobile Menu Toggle
+        document.querySelector('.menu-toggle').addEventListener('click', () => {
+            document.querySelector('.nav-links').classList.toggle('active');
+        });
+
         // Initialize
         document.addEventListener('DOMContentLoaded', () => {
             createMatrixRain();
             handleScrollAnimations();
-            fetchVisitorCounter(); // Initial fetch of visitor count
+            fetchVisitorCounter();
         });
     </script>
 </body>
